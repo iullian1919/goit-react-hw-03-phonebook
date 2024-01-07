@@ -5,7 +5,6 @@ import ContactList from './ContactList';
 import Filter from './Filter';
 
 const App = () => {
-  // Initializăm state-ul cu valorile din localStorage sau cu valorile predefinite
   const [contacts, setContacts] = useState(() => {
     const storedContacts = localStorage.getItem('contacts');
     return storedContacts
@@ -22,7 +21,6 @@ const App = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  // Efectul pentru a salva contactele în localStorage la fiecare schimbare
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
